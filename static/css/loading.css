@@ -1,0 +1,138 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.content {
+    height: 100vh;
+}
+
+.top {
+    height: 85%;
+}
+
+.top-content {
+    height: 100%;
+    position: relative;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgb(105, 35, 255);
+}
+
+.background-item {
+    flex: 1;
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0%, rgba(18, 18, 18, 0.12) 72.03%, rgba(255, 255, 255, 0.12) 126.88%);
+    border: 0.57px solid;
+    border-image-source: linear-gradient(212.39deg, rgba(255, 255, 255, 0.82) -61.53%, rgba(255, 255, 255, 0) 124.14%);
+    backdrop-filter: blur(178.86062622070312px)
+}
+
+.img_bust {
+    position: absolute;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+
+.bottom {
+    height: 15%;
+}
+
+.bottom-content {
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.progress-bar {
+    width: 360px;
+    height: 24px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    position: relative;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #5100FF;
+    border-radius: 25px;
+    /* animation: loadProgress 5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; */
+    transition: width ease;
+}
+
+/* @keyframes loadProgress {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+} */
+
+
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 888;
+}
+
+.abiturientu-title {
+    top: 58px;
+    font-size: 30px;
+
+}
+
+
+.pstu-title {
+    font-size: 35px;
+    bottom: 25px;
+}
+
+.ball {
+    border-radius: 100%;
+    position: absolute;
+}
+
+.red-ball {
+    width: 200px;
+    height: 200px;
+    background-color: #f65bc0;
+    top: 108px;
+    left: -15px;
+    box-shadow: 0px 0px 30px 20px #F65BC0CC;
+}
+
+
+.pink-ball{
+    width: 130px;
+    height: 130px;
+    bottom: 90px;
+    right: 0px;
+    background-color: #FFC3C3;
+    box-shadow: 0px 0px 30px 20px #FFC3C3;
+}
