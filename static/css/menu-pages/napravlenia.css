@@ -1,0 +1,11 @@
+.text-part{
+    margin-bottom: 30px;
+}
+
+.text-part ul{
+    list-style-type: none;
+}
+
+.text-part .sub-title{
+    margin-bottom: 20px;
+}

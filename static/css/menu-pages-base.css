@@ -1,4 +1,9 @@
 
+.main-content{
+    margin: 0px 12px;
+}
+
+
 .menu-page-title{
     display: flex;
     justify-content: space-between;

@@ -1,6 +1,6 @@
 from flask import render_template
 from main import app
-
+from util import *
 @app.route("/")
 def loading():
     return render_template("loading.html")
@@ -14,11 +14,13 @@ def menu():
 
 @app.route("/menu/naprvlenia")
 def napravlenia():
+    
     return render_template("menu-pages/napravlenia.html")
 
 @app.route("/menu/stoimost")
 def stoimost():
-    return render_template("menu-pages/stoimost.html")
+    images_links = get_all_image_stoimost()
+    return render_template("menu-pages/stoimost.html", images_links=get_all_image_stoimost())
 
 @app.route("/menu/obshejitie")
 def obshejitie():

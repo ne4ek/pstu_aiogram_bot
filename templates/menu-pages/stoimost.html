@@ -1,7 +1,15 @@
 {% extends "menu-pages-base.html" %}
 
+{% block menu_page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu-pages/stoimost.css') }}">
+{% endblock %}
+
 {% block menu_page_title %}СТОИМОСТЬ<br>ОБУЧЕНИЯ{% endblock %}
 
 {%block main%}
-
+<div class="images">
+    {% for image_link in images_links%}
+    <img src="{{ url_for('static', filename='img/menu_pages/stoimost/' + image_link) }}" alt="">
+    {% endfor %}
+</div>
 {% endblock %}
