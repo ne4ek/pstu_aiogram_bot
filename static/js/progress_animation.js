@@ -1,12 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     const progressBar = document.querySelector('.progress');
-
-//     // Начинаем анимацию при загрузке страницы
-//     setTimeout(() => {
-//         progressBar.style.width = '100%';
-//     }, 100);
-// });
-
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
