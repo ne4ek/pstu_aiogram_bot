@@ -1,71 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
-    <title>Document</title>
-</head>
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+{% endblock %}
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="search-bar">
-                <div class="search-text-bar">
-                    <p>СПРОСИТЕ ИИ-КОНСУЛЬТАНТА</p>
-                </div>
-                <div class="search-loupe"><svg width="32" height="33" viewBox="0 0 32 33" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M20.2857 22.42C25.6113 22.42 29.9285 17.8275 29.9285 12.1624C29.9285 6.49727 25.6113 1.90479 20.2857 1.90479C14.9601 1.90479 10.6428 6.49727 10.6428 12.1624C10.6428 17.8275 14.9601 22.42 20.2857 22.42Z"
-                            stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M2.07141 31.5379L14.0286 19.981" stroke="white" stroke-width="2.4"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <div class="main-content">
-            <div class="grid-container">
-                <div class="grid-item"><a href="{{url_for('napravlenia')}}"><img
-                            src="{{ url_for('static', filename='img/menu/napravlenia.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="{{url_for('stoimost')}}"><img
-                            src="{{ url_for('static', filename='img/menu/stoimost.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="{{url_for('obshejitie')}}"><img
-                            src="{{ url_for('static', filename='img/menu/obshejitie.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="{{url_for('contacti')}}"><img
-                            src="{{ url_for('static', filename='img/menu/contacti.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="{{url_for('anketi')}}"><img
-                            src="{{ url_for('static', filename='img/menu/anketi.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="{{url_for('eksameni')}}"><img
-                            src="{{ url_for('static', filename='img/menu/eksameni.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="{{url_for('postuplenie')}}"><img
-                            src="{{ url_for('static', filename='img/menu/postuplenie.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="{{url_for('ligoti')}}"><img
-                            src="{{ url_for('static', filename='img/menu/ligoti.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="{{url_for('o_vuse')}}"><img
-                            src="{{ url_for('static', filename='img/menu/o_vuse.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="https://vk.ru"><img
-                            src="{{ url_for('static', filename='img/menu/vk.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="https://wikipedia.com"><img
-                            src="{{ url_for('static', filename='img/menu/wikipedia.png') }}" alt=""></a></div>
-                <div class="grid-item"><a href="https://t.me"><img
-                            src="{{ url_for('static', filename='img/menu/telegram.png') }}" alt=""></a></div>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <div class="developers-container">
-                <a href="#">
-                    <p>РАЗРАБОТЧИКИ</p>
-                </a>
-            </div>
-        </div>
-    </footer>
-</body>
+{% block main %}
+<div class="main-content">
+    <div class="grid-container">
+        <div class="grid-item"><a href="{{url_for('napravlenia')}}"><img
+                    src="{{ url_for('static', filename='img/menu/napravlenia.png') }}" alt=""></a></div>
+        <div class="grid-item"><a href="{{url_for('stoimost')}}"><img
+                    src="{{ url_for('static', filename='img/menu/stoimost.png') }}" alt=""></a></div>
+        <div class="grid-item"><a href="{{url_for('obshejitie')}}"><img
+                    src="{{ url_for('static', filename='img/menu/obshejitie.png') }}" alt=""></a></div>
+        <div class="grid-item"><a href="{{url_for('contacti')}}"><img
+                    src="{{ url_for('static', filename='img/menu/contacti.png') }}" alt=""></a></div>
+        <div class="grid-item"><a href="{{url_for('anketi')}}"><img
+                    src="{{ url_for('static', filename='img/menu/anketi.png') }}" alt=""></a></div>
+        <div class="grid-item"><a href="{{url_for('eksameni')}}"><img
+                    src="{{ url_for('static', filename='img/menu/eksameni.png') }}" alt=""></a></div>
+        <div class="grid-item"><a href="{{url_for('postuplenie')}}"><img
+                    src="{{ url_for('static', filename='img/menu/postuplenie.png') }}" alt=""></a></div>
+        <div class="grid-item"><a href="{{url_for('ligoti')}}"><img
+                    src="{{ url_for('static', filename='img/menu/ligoti.png') }}" alt=""></a></div>
+        <div class="grid-item"><a href="{{url_for('o_vuse')}}"><img
+                    src="{{ url_for('static', filename='img/menu/o_vuse.png') }}" alt=""></a></div>
+        <div class="grid-item"><a href="https://vk.ru"><img src="{{ url_for('static', filename='img/menu/vk.png') }}"
+                    alt=""></a></div>
+        <div class="grid-item"><a href="https://wikipedia.com"><img
+                    src="{{ url_for('static', filename='img/menu/wikipedia.png') }}" alt=""></a></div>
+        <div class="grid-item"><a href="https://t.me"><img
+                    src="{{ url_for('static', filename='img/menu/telegram.png') }}" alt=""></a></div>
+    </div>
+</div>
+{% endblock %}
 
-</html>
+{% block footer %}
+<div class="footer-content">
+    <div class="developers-container">
+        <a href="#">
+            <p>РАЗРАБОТЧИКИ</p>
+        </a>
+    </div>
+</div>
+{% endblock %}

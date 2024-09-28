@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Doc{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="search-bar">
+                <div class="search-text-bar">
+                    <p>СПРОСИТЕ ИИ-КОНСУЛЬТАНТА</p>
+                </div>
+                <div class="search-loupe"><svg width="32" height="33" viewBox="0 0 32 33" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.2857 22.42C25.6113 22.42 29.9285 17.8275 29.9285 12.1624C29.9285 6.49727 25.6113 1.90479 20.2857 1.90479C14.9601 1.90479 10.6428 6.49727 10.6428 12.1624C10.6428 17.8275 14.9601 22.42 20.2857 22.42Z"
+                            stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2.07141 31.5379L14.0286 19.981" stroke="white" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            {% block header %}{% endblock %}
+        </div>
+
+    </header>
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    <footer>
+        {% block footer %}{% endblock %}
+    </footer>
+</body>
+
+</html>

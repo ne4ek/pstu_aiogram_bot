@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu-pages-base.css') }}">
+{% block menu_page_css %}
+{% endblock %}
+{% endblock %}
+
+
+{% block header %}
+<div class="menu-page-title">
+    <a href="{{ url_for('menu') }}">
+        <div class="arrow">
+            <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.7545 0.556834L0.655683 12.6557C-0.0867634 13.3981 -0.0867634 14.6019 0.655683 15.3443L12.7545 27.4432C13.497 28.1856 14.7007 28.1856 15.4432 27.4432C16.1856 26.7007 16.1856 25.497 15.4432 24.7545L4.68863 14L15.4432 3.24547C16.1856 2.50302 16.1856 1.29928 15.4432 0.556834C14.7007 -0.185611 13.497 -0.185611 12.7545 0.556834Z"
+                    fill="white" />
+            </svg>
+        </div>
+    </a>
+    <p class="menu_page_title">
+        {% block menu_page_title %}
+        {% endblock %}
+    </p>
+</div>
+{% endblock %}
