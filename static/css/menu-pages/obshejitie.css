@@ -1,0 +1,25 @@
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.images-grid-item {
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  margin-bottom: 30px;
+}
+
+.text p {
+  margin-bottom: 27px;
+  font-family: Bicubik;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16.09px;
+  letter-spacing: -0.045em;
+  text-align: left;
+}

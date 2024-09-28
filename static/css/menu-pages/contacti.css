@@ -1,0 +1,25 @@
+.image img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.text {
+  margin-bottom: 30px;
+}
+
+.text p {
+  font-family: Bicubik;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16.09px;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.links{
+    margin-bottom: 30px;
+}
+
+.links img{
+    margin-right: 20px;
+}

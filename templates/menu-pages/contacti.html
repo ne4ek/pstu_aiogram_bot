@@ -1,7 +1,53 @@
-{% extends "menu-pages-base.html" %}
-
-{% block menu_page_title %}КОНТАКТЫ{% endblock %}
-
-{%block main%}
-
+{% extends "menu-pages-base.html" %} {% block menu_page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/menu-pages/contacti.css') }}"
+/>
+{% endblock %} {% block menu_page_title %} КОНТАКТЫ {% endblock %} {%block
+main_content%}
+<div class="image">
+  <img
+    src="{{ url_for('static', filename='img/menu_pages/contacti/pstu_map.png') }}"
+    alt=""
+  />
+</div>
+<div class="text">
+  <p>
+    Адрес приемной комиссии:<br />
+    г. Мариуполь, проспект Металлургов, 54.
+  </p>
+  <p>
+    🌎 Адрес: <br />
+    г. Мариуполь, ул. Университетская, 7
+  </p>
+  <p>
+    📱 Телефон приемной комиссии:<br />
+    <a href="tel:+79497271918">+7 949 727 19 18</a>
+  </p>
+  <p>
+    ️ E-mail приемной комиссии:<br />
+    priem87555@yandex.ru
+  </p>
+  <p>
+    E-mail:<br />
+    office-pstu@yandex.ru
+  </p>
+</div>
+<div class="links">
+  <a href="https://wikipedia.com"
+    ><img
+      src="{{ url_for('static', filename='img/menu_pages/contacti/wikipedia.png') }}"
+      alt=""
+  /></a>
+  <a href="https://vk.ru"
+    ><img
+      src="{{ url_for('static', filename='img/menu_pages/contacti/vk.png') }}"
+      alt=""
+  /></a>
+  <a href="https://t.me"
+    ><img
+      src="{{ url_for('static', filename='img/menu_pages/contacti/telegram.png') }}"
+      alt=""
+  /></a>
+</div>
 {% endblock %}

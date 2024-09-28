@@ -1,15 +1,16 @@
-{% extends "menu-pages-base.html" %}
-
-{% block menu_page_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/menu-pages/stoimost.css') }}">
-{% endblock %}
-
-{% block menu_page_title %}СТОИМОСТЬ<br>ОБУЧЕНИЯ{% endblock %}
-
-{%block main%}
+{% extends "menu-pages-base.html" %} {% block menu_page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/menu-pages/stoimost.css') }}"
+/>
+{% endblock %} {% block menu_page_title %}СТОИМОСТЬ<br />ОБУЧЕНИЯ{% endblock %}
+{%block main_content%}
 <div class="images">
-    {% for image_link in images_links%}
-    <img src="{{ url_for('static', filename='img/menu_pages/stoimost/' + image_link) }}" alt="">
-    {% endfor %}
+  {% for image_name in image_names%}
+  <img
+    src="{{ url_for('static', filename='img/menu_pages/stoimost/' + image_name) }}"
+    alt=""
+  />
+  {% endfor %}
 </div>
 {% endblock %}

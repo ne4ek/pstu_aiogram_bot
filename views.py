@@ -8,7 +8,8 @@ def loading():
 
 @app.route("/menu")
 def menu():
-    return render_template("menu.html")
+    context = {'menu_items':get_all_menu_items(), 'menu_socials':get_all_social_for_menu()}
+    return render_template("menu.html", menu_items=get_all_menu_items(), menu_socials=get_all_social_for_menu())
 
 
 
@@ -20,11 +21,11 @@ def napravlenia():
 @app.route("/menu/stoimost")
 def stoimost():
     images_links = get_all_image_stoimost()
-    return render_template("menu-pages/stoimost.html", images_links=get_all_image_stoimost())
+    return render_template("menu-pages/stoimost.html", image_names=get_all_image_stoimost())
 
 @app.route("/menu/obshejitie")
 def obshejitie():
-    return render_template("menu-pages/obshejitie.html")
+    return render_template("menu-pages/obshejitie.html", image_names=get_all_image_obshejitie())
 
 @app.route("/menu/contacti")
 def contacti():
