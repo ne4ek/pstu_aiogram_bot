@@ -1,80 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Doc{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/loading.css') }}">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/loading.css') }}"
+    />
     {% block extra_css %}{% endblock %}
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="loading">
-        <div class="content">
-            <section class="top">
-                <div class="top-content">
-                    <div class="background">
-                        {% for i in range(8) %}
-                        <div class="background-item"></div>
-                        {% endfor %}
-                    </div>
-                    <img class="img_bust" src="{{url_for('static', filename='img/bust.png')}}" alt="some grek man">
-                    <img class="title abiturientu-title" src="{{ url_for('static', filename='img/abiturientu.png') }}" alt="АБИТУРИЕНТУ">
-                    <img class="title pstu-title" src="{{ url_for('static', filename='img/pstu.png') }}" alt="">
-                    <div class="ball red-ball"></div>
-                    <div class="ball pink-ball"></div>
-                </div>
-            </section>
-            <section class="bottom">
-                <div class="bottom-content">
-                    <div class="progress-bar">
-                        <div class="progress"></div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-    <div  class="all-content">
-    <header>
-        <div class="header-content">
-            <div class="search-bar">
-                <div class="search-text-bar">
-                    <p>СПРОСИТЕ ИИ-КОНСУЛЬТАНТА</p>
-                </div>
-                <div class="search-loupe"><svg width="32" height="33" viewBox="0 0 32 33" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M20.2857 22.42C25.6113 22.42 29.9285 17.8275 29.9285 12.1624C29.9285 6.49727 25.6113 1.90479 20.2857 1.90479C14.9601 1.90479 10.6428 6.49727 10.6428 12.1624C10.6428 17.8275 14.9601 22.42 20.2857 22.42Z"
-                            stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M2.07141 31.5379L14.0286 19.981" stroke="white" stroke-width="2.4"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
+      <div class="content">
+        <section class="top">
+          <div class="top-content">
+            <div class="background">
+              {% for i in range(8) %}
+              <div class="background-item"></div>
+              {% endfor %}
             </div>
-            {% block header %}{% endblock %}
+            <img
+              class="img_bust"
+              src="{{url_for('static', filename='img/bust.png')}}"
+              alt="some grek man"
+            />
+            <img
+              class="title abiturientu-title"
+              src="{{ url_for('static', filename='img/abiturientu.png') }}"
+              alt="АБИТУРИЕНТУ"
+            />
+            <img
+              class="title pstu-title"
+              src="{{ url_for('static', filename='img/pstu.png') }}"
+              alt=""
+            />
+            <div class="ball red-ball"></div>
+            <div class="ball pink-ball"></div>
+          </div>
+        </section>
+        <section class="bottom">
+          <div class="bottom-content">
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div style="display: none" class="search" id="search">
+      <div class="search-window" id="search-window">
+        <section class="section-head">
+          <div class="close-search-window" id="close-search-window">X</div>
+        </section>
+        <section class="section-body">
+          <div class="text">
+            <p>Пока в разработке.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="all-content">
+      <header>
+        <div class="header-content">
+          <div class="search-bar" id="search-bar">
+            <div class="search-text-bar">
+              <p>СПРОСИТЕ ИИ-КОНСУЛЬТАНТА</p>
+            </div>
+            <div class="search-loupe">
+              <svg
+                width="32"
+                height="33"
+                viewBox="0 0 32 33"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.2857 22.42C25.6113 22.42 29.9285 17.8275 29.9285 12.1624C29.9285 6.49727 25.6113 1.90479 20.2857 1.90479C14.9601 1.90479 10.6428 6.49727 10.6428 12.1624C10.6428 17.8275 14.9601 22.42 20.2857 22.42Z"
+                  stroke="white"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2.07141 31.5379L14.0286 19.981"
+                  stroke="white"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          {% block header %}{% endblock %}
         </div>
+      </header>
+      <main>{% block main %}{% endblock %}</main>
+      <footer>{% block footer %}{% endblock %}</footer>
+    </div>
 
-    </header>
-    <main>
-        {% block main %}{% endblock %}
-    </main>
-    <footer>
-        {% block footer %}{% endblock %}
-    </footer>
-</div>
+    <script src="{{ url_for('static', filename='js/progress_animation.js') }}"></script>
+    <script>
+      let loadingPage = document.getElementById("loading");
+      let allContent = document.querySelector(".all-content");
 
-<script src="{{ url_for('static', filename='js/progress_animation.js') }}"></script>
-<script>
-    let loadingPage = document.getElementById('loading');
-    let allContent = document.querySelector('.all-content');
+      setTimeout(function () {
+        loadingPage.style.display = "none";
+        allContent.style.display = "block";
+      }, 1186);
+    </script>
+    <script>
+      const SEARCH_BAR = document.getElementById("search-bar");
+      const CLOSE_SEARCH_WINDOW = document.getElementById(
+        "close-search-window"
+      );
+      const SEARCH = document.getElementById("search");
 
-    setTimeout(function(){
-            loadingPage.style.display = 'none';
-            allContent.style.display = 'block';
-    }, 1186);
-</script>
-</body>
+      SEARCH_BAR.addEventListener("click", () => showSearchWindow());
 
+      CLOSE_SEARCH_WINDOW.addEventListener("click", () => closeSearchWindow());
+
+      function showSearchWindow() {
+        SEARCH.style.display = "block";
+      }
+
+      function closeSearchWindow() {
+        SEARCH.style.display = "none";
+      }
+    </script>
+  </body>
 </html>

@@ -37,15 +37,20 @@
 {% block footer %}
 <div class="footer-content">
   <div class="developers-container">
-    <a href="#">
+    <button class="developer-button" onclick="showDevelopers();">
       <p>РАЗРАБОТЧИКИ</p>
-    </a>
+    </button>
   </div>
 </div>
 <script>
   function goToMenuPage(buttonId) {
     let url = "/menu/" + buttonId;
     window.location.href = url;
+  }
+</script>
+<script>
+  function showDevelopers(){
+    
   }
 </script>
 {% endblock %}
