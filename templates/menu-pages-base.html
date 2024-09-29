@@ -9,7 +9,7 @@
 
 {% block header %}
 <div class="menu-page-title">
-    <a href="{{ url_for('menu') }}">
+    <button id="button-arrow" onclick="goToMenu()">
         <div class="arrow">
             <svg width="16" height="28" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -17,7 +17,7 @@
                     fill="white" />
             </svg>
         </div>
-    </a>
+    </button>
     <p class="menu_page_title">
         {% block menu_page_title %}
         {% endblock %}
@@ -29,4 +29,13 @@
 <div class="main-content">
     {% block main_content %}{% endblock %}
 </div>
+{% endblock %}
+
+{% block footer %}
+<script>
+    function goToMenu(){
+        url = "/"
+        window.location.href = url;
+    }
+</script>
 {% endblock %}

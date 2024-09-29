@@ -1,19 +1,24 @@
-from flask import render_template
+from flask import render_template, redirect, url_for
 from main import app
 from util import *
-@app.route("/")
+
+
+@app.route("/loading")
 def loading():
     return render_template("loading.html")
 
 
-@app.route("/menu")
+
+@app.route("/")
 def menu():
     context = {'menu_items':get_all_menu_items(), 'menu_socials':get_all_social_for_menu()}
     return render_template("menu.html", menu_items=get_all_menu_items(), menu_socials=get_all_social_for_menu())
 
+@app.route("/menu")
+def menu_redirect():
+    return redirect(url_for('menu'))
 
-
-@app.route("/menu/naprvlenia")
+@app.route("/menu/napravlenia")
 def napravlenia():
     
     return render_template("menu-pages/napravlenia.html")

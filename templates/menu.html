@@ -1,36 +1,51 @@
 {% extends "base.html" %}
-
 {% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
-{% endblock %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/menu.css') }}"
+/>
+{% endblock %} 
 
 {% block main %}
 <div class="main-content">
-    <div class="grid-container">
-        {% for menu_item in menu_items %}
-        <div class="grid-item">
-            <a href="{{ url_for(menu_item) }}">
-                <img src="{{ url_for('static', filename='img/menu/'+ menu_item + '.png') }}" alt="">
-            </a>
-        </div>
-        {% endfor %}
-        {% for menu_social_name, menu_social_link in menu_socials.items() %}
-        <div class="grid-item">
-            <a href="{{ menu_social_link }}">
-                <img src="{{ url_for('static', filename='img/menu/' + menu_social_name + '.png') }}" alt="">
-            </a>
-        </div>
-        {% endfor %}
+  <div class="grid-container">
+    {% for menu_item in menu_items %}
+    <div class="grid-item">
+      <button id="{{ menu_item }}" onclick="goToMenuPage(this.id)">
+        <img
+          src="{{ url_for('static', filename='img/menu/'+ menu_item + '.png') }}"
+          alt=""
+        />
+      </button>
     </div>
+    {% endfor %} 
+    
+    {% for menu_social_name, menu_social_link in menu_socials.items() %}
+    <div class="grid-item">
+      <a href="{{ menu_social_link }}">
+        <img
+          src="{{ url_for('static', filename='img/menu/' + menu_social_name + '.png') }}"
+          alt=""
+        />
+      </a>
+    </div>
+    {% endfor %}
+  </div>
 </div>
-{% endblock %}
+{% endblock %} 
 
 {% block footer %}
 <div class="footer-content">
-    <div class="developers-container">
-        <a href="#">
-            <p>РАЗРАБОТЧИКИ</p>
-        </a>
-    </div>
+  <div class="developers-container">
+    <a href="#">
+      <p>РАЗРАБОТЧИКИ</p>
+    </a>
+  </div>
 </div>
+<script>
+  function goToMenuPage(buttonId) {
+    let url = "/menu/" + buttonId;
+    window.location.href = url;
+  }
+</script>
 {% endblock %}

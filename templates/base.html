@@ -6,10 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Doc{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loading.css') }}">
     {% block extra_css %}{% endblock %}
 </head>
 
 <body>
+    <div id="loading">
+        <div class="content">
+            <section class="top">
+                <div class="top-content">
+                    <div class="background">
+                        {% for i in range(8) %}
+                        <div class="background-item"></div>
+                        {% endfor %}
+                    </div>
+                    <img class="img_bust" src="{{url_for('static', filename='img/bust.png')}}" alt="some grek man">
+                    <img class="title abiturientu-title" src="{{ url_for('static', filename='img/abiturientu.png') }}" alt="АБИТУРИЕНТУ">
+                    <img class="title pstu-title" src="{{ url_for('static', filename='img/pstu.png') }}" alt="">
+                    <div class="ball red-ball"></div>
+                    <div class="ball pink-ball"></div>
+                </div>
+            </section>
+            <section class="bottom">
+                <div class="bottom-content">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div  class="all-content">
     <header>
         <div class="header-content">
             <div class="search-bar">
@@ -36,6 +63,18 @@
     <footer>
         {% block footer %}{% endblock %}
     </footer>
+</div>
+
+<script src="{{ url_for('static', filename='js/progress_animation.js') }}"></script>
+<script>
+    let loadingPage = document.getElementById('loading');
+    let allContent = document.querySelector('.all-content');
+
+    setTimeout(function(){
+            loadingPage.style.display = 'none';
+            allContent.style.display = 'block';
+    }, 1186);
+</script>
 </body>
 
 </html>

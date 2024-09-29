@@ -65,3 +65,7 @@ header {
    padding-right: 7px;
    width: 60px;
 }
+
+.all-content{
+    display: none;
+}
