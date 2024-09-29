@@ -29,3 +29,17 @@ def get_all_image_stoimost():
 def get_all_image_obshejitie():
     directory = '/static/img/menu_pages/obshejitie/'
     return get_all_image_for(directory=directory)
+
+
+def get_all_image_eksameni():
+    directory = '/static/img/menu_pages/eksameni/'
+    return get_all_image_for(directory=directory)
+
+def get_all_image_postuplenie():
+    directory = '/static/img/menu_pages/postuplenie/'
+    return get_all_image_for(directory=directory)
+
+
+def get_all_image_ligoti():
+    directory = '/static/img/menu_pages/ligoti/'
+    return get_all_image_for(directory=directory)

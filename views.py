@@ -37,15 +37,15 @@ def anketi():
 
 @app.route("/menu/eksameni")
 def eksameni():
-    return render_template("menu-pages/eksameni.html")
+    return render_template("menu-pages/eksameni.html", image_names=get_all_image_eksameni())
 
 @app.route("/menu/postuplenie")
 def postuplenie():
-    return render_template("menu-pages/postuplenie.html")
+    return render_template("menu-pages/postuplenie.html", image_names=get_all_image_postuplenie())
 
 @app.route("/menu/ligoti")
 def ligoti():
-    return render_template("menu-pages/ligoti.html")
+    return render_template("menu-pages/ligoti.html", image_names=get_all_image_ligoti())
 
 @app.route("/menu/o_vuse")
 def o_vuse():

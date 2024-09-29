@@ -1,7 +1,13 @@
 {% extends "menu-pages-base.html" %}
+{% block menu_page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu-pages/anketi.css') }}">
+{% endblock %}
+
 
 {% block menu_page_title %}АНКЕТЫ{% endblock %}
-
-{%block main%}
-
+{%block main_content%}
+<div class="buttons">
+    <a href="#"><button>АНКЕТА АБИТУРИЕНТА</button></a>
+    <a href="#"><button>ОБРАЗОВАТЕЛЬНЫЙ ИНТЕНСИВ</button></a>
+</div>
 {% endblock %}

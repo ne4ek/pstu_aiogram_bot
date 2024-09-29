@@ -1,7 +1,18 @@
 {% extends "menu-pages-base.html" %}
 
+{% block menu_page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu-pages/ligoti.css') }}">
+{% endblock %}
+
 {% block menu_page_title %}ЛЬГОТЫ{% endblock %}
 
-{%block main%}
-
+{%block main_content%}
+    <div class="images">
+        {% for image_name in image_names%}
+        <img
+          src="{{ url_for('static', filename='img/menu_pages/ligoti/' + image_name) }}"
+          alt=""
+        />
+        {% endfor %}
+    </div>
 {% endblock %}
