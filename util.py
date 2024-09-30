@@ -9,7 +9,7 @@ def get_all_menu_items():
     return ordering
 
 def get_all_social_for_menu():
-    ordering = {'vk': 'https://vk.ru', 'wikipedia': 'https://wikipedia.com', 'telegram': 'https://t.me'}
+    ordering = {'vk': 'https://vk.com/pstu__mariupol?ysclid=luixpizndq113505580', 'wikipedia': 'https://pstu.su/', 'telegram': 'https://t.me/pstu_mariupol'}
     return ordering
 
 
