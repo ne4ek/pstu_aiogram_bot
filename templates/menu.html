@@ -1,12 +1,9 @@
-{% extends "base.html" %}
-{% block extra_css %}
+{% extends "base.html" %} {% block extra_css %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/menu.css') }}"
 />
-{% endblock %} 
-
-{% block main %}
+{% endblock %} {% block main %}
 <div class="main-content">
   <div class="grid-container">
     {% for menu_item in menu_items %}
@@ -18,9 +15,8 @@
         />
       </button>
     </div>
-    {% endfor %} 
-    
-    {% for menu_social_name, menu_social_link in menu_socials.items() %}
+    {% endfor %} {% for menu_social_name, menu_social_link in
+    menu_socials.items() %}
     <div class="grid-item">
       <a href="{{ menu_social_link }}">
         <img
@@ -32,16 +28,28 @@
     {% endfor %}
   </div>
 </div>
-{% endblock %} 
-
-{% block footer %}
+{% endblock %} {% block footer %}
 <div class="footer-content">
-  <div class="developers-container">
-    <button class="developer-button" onclick="showDevelopers();">
+  <button class="developer-button" onclick="showDevelopers();">
+    <div class="developers-container">
       <p>РАЗРАБОТЧИКИ</p>
-    </button>
+    </div>
+  </button>
+</div>
+
+<div style="display: none;" class="developers-window" id="developers-window">
+  <div class="developers-showing-window">
+    <section class="section-head">
+      <div class="close-window" id="close-developers-window">X</div>
+    </section>
+    <section class="section-body">
+      <div class="text">
+        <p>Пока в разработке.</p>
+      </div>
+    </section>
   </div>
 </div>
+
 <script>
   function goToMenuPage(buttonId) {
     let url = "/menu/" + buttonId;
@@ -49,8 +57,22 @@
   }
 </script>
 <script>
-  function showDevelopers(){
-    
+  const DEVELOPERS_WINDOW = document.getElementById("developers-window");
+
+  function showDevelopers() {
+    //change to display = block for working 'show developers window' 
+    DEVELOPERS_WINDOW.style.display = "none";
+  }
+
+  const CLOSE_DEVELOPERS_WINDOW = document.getElementById(
+    "close-developers-window"
+  );
+  CLOSE_DEVELOPERS_WINDOW.addEventListener("click", () =>
+    closeDevelopersWindow()
+  );
+
+  function closeDevelopersWindow() {
+    DEVELOPERS_WINDOW.style.display = "none";
   }
 </script>
 {% endblock %}
